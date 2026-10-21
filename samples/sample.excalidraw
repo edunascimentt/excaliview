@@ -1,0 +1,14 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "elements": [
+    {"id":"r1","type":"rectangle","x":0,"y":0,"width":220,"height":100,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"#a5d8ff","fillStyle":"hachure","strokeWidth":2,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":{"type":3},"seed":1,"version":1,"versionNonce":1,"isDeleted":false,"boundElements":[{"type":"text","id":"t1"},{"type":"arrow","id":"a1"}],"updated":1,"link":null,"locked":false},
+    {"id":"t1","type":"text","x":40,"y":37,"width":140,"height":25,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":2,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":null,"seed":2,"version":1,"versionNonce":2,"isDeleted":false,"boundElements":null,"updated":1,"link":null,"locked":false,"text":"Excaliview","fontSize":20,"fontFamily":5,"textAlign":"center","verticalAlign":"middle","containerId":"r1","originalText":"Excaliview","autoResize":true,"lineHeight":1.25},
+    {"id":"e1","type":"ellipse","x":380,"y":-10,"width":160,"height":120,"angle":0,"strokeColor":"#e03131","backgroundColor":"#ffc9c9","fillStyle":"cross-hatch","strokeWidth":2,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":{"type":2},"seed":3,"version":1,"versionNonce":3,"isDeleted":false,"boundElements":[{"type":"arrow","id":"a1"}],"updated":1,"link":null,"locked":false},
+    {"id":"a1","type":"arrow","x":225,"y":50,"width":150,"height":0,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":2,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":{"type":2},"seed":4,"version":1,"versionNonce":4,"isDeleted":false,"boundElements":null,"updated":1,"link":null,"locked":false,"points":[[0,0],[150,0]],"lastCommittedPoint":null,"startBinding":{"elementId":"r1","focus":0,"gap":5},"endBinding":{"elementId":"e1","focus":0,"gap":5},"startArrowhead":null,"endArrowhead":"arrow","elbowed":false},
+    {"id":"t2","type":"text","x":60,"y":160,"width":420,"height":35,"angle":0,"strokeColor":"#2f9e44","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":2,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":null,"seed":5,"version":1,"versionNonce":5,"isDeleted":false,"boundElements":null,"updated":1,"link":null,"locked":false,"text":"Quick Look ❤️ Excalidraw — 日本語","fontSize":28,"fontFamily":5,"textAlign":"left","verticalAlign":"top","containerId":null,"originalText":"Quick Look ❤️ Excalidraw — 日本語","autoResize":true,"lineHeight":1.25}
+  ],
+  "appState": {"gridSize": null, "viewBackgroundColor": "#ffffff"},
+  "files": {}
+}

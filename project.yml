@@ -1,0 +1,100 @@
+name: Excaliview
+options:
+  bundleIdPrefix: com.edunascimentt
+  deploymentTarget:
+    macOS: "14.0"
+settings:
+  base:
+    DEVELOPMENT_TEAM: TDKZ57H2QL
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGN_IDENTITY: "Apple Development"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    ENABLE_HARDENED_RUNTIME: YES
+targets:
+  Excaliview:
+    type: application
+    platform: macOS
+    sources: [App]
+    dependencies:
+      - target: ExcaliviewPreview
+      - target: ExcaliviewThumbnail
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: Excaliview
+        LSApplicationCategoryType: public.app-category.developer-tools
+        UTImportedTypeDeclarations:
+          - UTTypeIdentifier: com.excalidraw.excalidraw
+            UTTypeDescription: Excalidraw Drawing
+            UTTypeConformsTo: [public.json, public.data]
+            UTTypeTagSpecification:
+              public.filename-extension: [excalidraw]
+              public.mime-type: [application/vnd.excalidraw+json]
+    entitlements:
+      path: App/Excaliview.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.edunascimentt.excaliview
+  ExcaliviewPreview:
+    type: app-extension
+    platform: macOS
+    sources:
+      - PreviewExtension
+      - Shared/Sources
+      - path: Shared/Web
+        type: folder
+        buildPhase: resources
+    frameworks: []
+    info:
+      path: PreviewExtension/Info.plist
+      properties:
+        CFBundleDisplayName: Excaliview Preview
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.quicklook.preview
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
+          NSExtensionAttributes:
+            QLSupportedContentTypes: [com.excalidraw.excalidraw]
+            QLSupportsSearchableItems: false
+    entitlements:
+      path: PreviewExtension/ExcaliviewPreview.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.files.user-selected.read-only: true
+        # Required for WKWebView's WebContent process to launch; the page's CSP blocks real network use.
+        com.apple.security.network.client: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.edunascimentt.excaliview.preview
+  ExcaliviewThumbnail:
+    type: app-extension
+    platform: macOS
+    sources:
+      - ThumbnailExtension
+      - Shared/Sources
+      - path: Shared/Web
+        type: folder
+        buildPhase: resources
+    info:
+      path: ThumbnailExtension/Info.plist
+      properties:
+        CFBundleDisplayName: Excaliview Thumbnail
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.quicklook.thumbnail
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).ThumbnailProvider
+          NSExtensionAttributes:
+            QLSupportedContentTypes: [com.excalidraw.excalidraw]
+            QLThumbnailMinimumDimension: 0
+    entitlements:
+      path: ThumbnailExtension/ExcaliviewThumbnail.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.files.user-selected.read-only: true
+        # Required for WKWebView's WebContent process to launch; the page's CSP blocks real network use.
+        com.apple.security.network.client: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.edunascimentt.excaliview.thumbnail
